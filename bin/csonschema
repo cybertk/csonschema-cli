@@ -1,0 +1,61 @@
+#!/usr/bin/env node
+
+optimist = require('optimist');
+pjson = require('../package.json');
+csonschema = require('csonschema');
+
+// csonschema options
+options = {
+  types: {
+    alias: 't',
+    description: 'Global types'
+  },
+  help: {
+    alias: "h",
+    description: "Show usage information.\n"
+  },
+  version: {
+    description: "Show version number.\n"
+  }
+};
+
+
+var argv = optimist
+    .usage("Usage: \n  csonschema <path to csonschema> [OPTIONS]" +
+    "\n\nExample: \n  " + "csonschema foo.schema")
+    .options(options)
+    .wrap(80)
+    .argv;
+
+var argError = false;
+
+if (argv.help === true) {
+  optimist.showHelp(fn=console.error);
+  process.exit(0);
+}
+
+if (argv.version === true) {
+  console.log(version);
+  process.exit(0);
+}
+
+if (argv._[0] === undefined) {
+  console.error("Error: Must specify path to schema file.");
+  argError = true;
+}
+if (argError) {
+  console.error("\n");
+  optimist.showHelp(fn=console.error);
+  process.exit(1);
+}
+
+source = argv._[0];
+try {
+  data = csonschema.parseSync(source);
+} catch (error) {
+  console.error(error);
+  process.exit(1);
+};
+
+console.log(JSON.stringify(data, null, 4));
+process.exit(0);
