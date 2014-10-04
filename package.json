@@ -1,6 +1,6 @@
 {
   "name": "csonschema-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The csonschema command line interface.",
   "bin": {
     "csonschema": "bin/csonschema"
