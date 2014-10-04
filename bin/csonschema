@@ -15,6 +15,7 @@ options = {
     description: "Show usage information.\n"
   },
   version: {
+    alias: "v",
     description: "Show version number.\n"
   }
 };
@@ -35,7 +36,7 @@ if (argv.help === true) {
 }
 
 if (argv.version === true) {
-  console.log(version);
+  console.log(pjson.version);
   process.exit(0);
 }
 

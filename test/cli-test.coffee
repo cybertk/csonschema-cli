@@ -1,5 +1,6 @@
 {assert} = require('chai')
 {exec} = require('child_process')
+pjson = require('../package.json')
 
 
 CMD_PREFIX = ''
@@ -55,6 +56,20 @@ describe "Command line interface", ->
 
     it 'should print error message to stderr', ->
       assert.include stderr, 'Error: Must specify path to schema file.'
+
+  describe "Arguments with `-v`", ->
+    before (done) ->
+      cmd = "./bin/csonschema -v"
+
+      execCommand cmd, done
+
+    it 'should exit with status 0', ->
+      assert.equal exitStatus, 0
+
+    it 'should print current version', ->
+      assert.include stdout, pjson.version
+      assert.equal exitStatus, 0
+
 
   describe "Arguments with validated raml", ->
 
