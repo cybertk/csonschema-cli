@@ -29,3 +29,7 @@
 Any contribution is more then welcome!
 
 [csonschema]: http://github.com/cybertk/csonschema
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/cybertk/csonschema-cli/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
