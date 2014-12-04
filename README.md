@@ -2,10 +2,10 @@
 
 > The [csonschema][] command line interface
 
-[![Build Status](http://img.shields.io/travis/cybertk/csonschema-cli.svg?style=flat)](https://travis-ci.org/cybertk/csonschema-cli)
-[![Dependency Status](https://david-dm.org/cybertk/csonschema-cli.png)](https://david-dm.org/cybertk/csonschema-cli)
+[![Build Status](http://img.shields.io/travis/cybertk/csonschema-cli.svg)](https://travis-ci.org/cybertk/csonschema-cli)
+[![Dependency Status](https://david-dm.org/cybertk/csonschema-cli.svg)](https://david-dm.org/cybertk/csonschema-cli)
 [![devDependency Status](https://david-dm.org/cybertk/csonschema-cli/dev-status.svg)](https://david-dm.org/cybertk/csonschema-cli#info=devDependencies)
-[![Coverage Status](https://coveralls.io/repos/cybertk/csonschema-cli/badge.png?branch=master)](https://coveralls.io/r/cybertk/csonschema-cli?branch=master)
+[![Status](https://img.shields.io/coveralls/cybertk/csonschema-cli.svg)](https://coveralls.io/r/cybertk/csonschema-cli)
 
 ## Installation
 
@@ -16,9 +16,23 @@
 [Node.js]: https://npmjs.org/
 [NPM]: https://npmjs.org/
 
-## Usage
+## Examples
 
     $ csonschema path/to/cson.schema
+
+## Usage
+
+    Usage:
+    csonschema <path to csonschema> [OPTIONS]
+
+    Example:
+    csonschema foo.schema
+
+    Options:
+    --types, -t    Global types
+    --help, -h     Show usage information.
+
+    --version, -v  Show version number.
 
 ## Contribution
 
@@ -26,7 +40,7 @@
 
     $ npm test
 
-Any contribution is more then welcome!
+Any contribution is more than welcome!
 
 [csonschema]: http://github.com/cybertk/csonschema
 
